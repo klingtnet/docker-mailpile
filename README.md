@@ -14,7 +14,7 @@ docker create --name mailpile-data -v /home/mpuser klingtdotnet/mailpile
 - if you work remotely, then bind the remote port to your local machine: `ssh -L 12345:localhost:10800 some_server`
 
 ```sh
-docker run --name mailpile --volumes-from mailpile-data -p 10080 --rm -it klingtdotnet/mailpile
+docker run --name mailpile --volumes-from mailpile-data -p 10080:10800 --rm -it klingtdotnet/mailpile
 ```
 
 ### Import GPG/PGP keys
