@@ -1,0 +1,2 @@
+# environment variables for mailpile SystemD service
+MAILPILE_PORT=10080
