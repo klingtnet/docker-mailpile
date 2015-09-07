@@ -30,10 +30,10 @@ RUN useradd --create-home --system --shell $(which nologin) --comment 'Mailpile 
 
 ENV LANG 'en_US.UTF-8'
 
-EXPOSE 10080
-
-VOLUME /home/mpuser
-
 USER ${MP_USER}
+
+
+VOLUME /home/mpuser/.local/share/Mailpile
+VOLUME /home/mpuser/.gnupg
 
 CMD mp --www=0.0.0.0:10080 --wait
