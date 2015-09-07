@@ -36,6 +36,8 @@ USER ${MP_USER}
 RUN gpg --list-keys &&\
     mp setup
 
+EXPOSE 10080
+
 VOLUME /home/mpuser/.local/share/Mailpile
 VOLUME /home/mpuser/.gnupg
 
