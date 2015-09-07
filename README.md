@@ -29,4 +29,7 @@ rm secret.key
 
 ### as SystemD Service
 
-...
+- copy `mailpile@.service` to `/etc/systemd/system` and `mailpile` environment file (edit if necessary) to `/etc/sysconfig`
+- `systemctl daemon-reload`
+- `systemctl start mailpile@someuser`
+- to run it automatically on boot `systemctl enable mailpile@someuser`
