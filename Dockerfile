@@ -34,4 +34,6 @@ EXPOSE 10080
 
 VOLUME /home/mpuser
 
-CMD su -s /bin/sh -c "mp --www=0.0.0.0:10080 --wait" - ${MP_USER}
+USER ${MP_USER}
+
+CMD mp --www=0.0.0.0:10080 --wait
