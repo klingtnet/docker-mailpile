@@ -32,6 +32,9 @@ ENV LANG 'en_US.UTF-8'
 
 USER ${MP_USER}
 
+# initialize gpg home and mailpile by running a non mutable command
+RUN gpg --list-keys &&\
+    mp setup
 
 VOLUME /home/mpuser/.local/share/Mailpile
 VOLUME /home/mpuser/.gnupg
