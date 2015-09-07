@@ -1,0 +1,16 @@
+[Unit]
+Description=mailpile - mail client
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+EnvironmentFile=/etc/sysconfig/mailpile
+ExecStartPre=-/usr/bin/docker rm -f mailpile
+ExecStart=/usr/bin/docker run --name mailpile \
+    -p ${MAILPILE_PORT}:3000 \
+    --volumes-from mailpile-data klingtdotnet/mailpile
+ExecStop=/usr/bin/docker stop mailpile
+
+[Install]
+WantedBy=multi-user.target
