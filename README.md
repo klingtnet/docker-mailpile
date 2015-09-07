@@ -9,6 +9,9 @@ docker create --name mailpile-data -v /home/mpuser klingtdotnet/mailpile
 ```
 
 - run the container
+- mailpile will ask you to enter your new password on first run
+- make sure that nobody can access the web ui at this moment, g.e. by exposing the port on localhost: `-v 127.0.0.1:10080:10080`
+- if you work remotely, then bind the remote port to your local machine: `ssh -L 12345:localhost:10800 some_server`
 
 ```sh
 docker run --name mailpile --volumes-from mailpile-data -p 10080 --rm -it klingtdotnet/mailpile
