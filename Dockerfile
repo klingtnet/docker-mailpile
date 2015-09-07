@@ -34,7 +34,7 @@ USER ${MP_USER}
 
 # initialize gpg home and mailpile by running a non mutable command
 RUN gpg --list-keys &&\
-    mp setup
+    mp quit
 
 EXPOSE 10080
 
