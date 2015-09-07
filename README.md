@@ -5,7 +5,7 @@
 - generate data container
 
 ```sh
-docker create --name mailpile-data -v /home/mpuser klingtdotnet/mailpile
+docker create --name mailpile-data -v /home/mpuser/.gnupg -v /home/mpuser/.local/share/Mailpile klingtdotnet/mailpile
 ```
 
 - run the container
